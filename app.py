@@ -82,16 +82,19 @@ st.markdown("""
 
 CANGKANG_COORDS = [23.398, 121.488]
 
-# 預設資料庫 (Kakopa 已修正)
+# 預設資料庫 (Data Updated: Foladan/Kakopa/Monari' Locations Corrected)
 DEFAULT_CLAN_DB = [
     {"id": "pacidal", "name": "Pacidal", "meaning": "太陽", "algo": "高地優勢 / 監控者", "origin": "花蓮月眉 / 豐富", "lat": 23.931, "lon": 121.535, "icon": "☀️", "color": "#d97706"},
     {"id": "ciwidian", "name": "Ciwidian", "meaning": "水蛭", "algo": "水源豐沛 / 濕地農業", "origin": "花蓮水璉村", "lat": 23.778, "lon": 121.564, "icon": "💧", "color": "#2563eb"},
     {"id": "sadipongan", "name": "Sadipongan", "meaning": "鳥巢", "algo": "物理屏障 / 安全庇護", "origin": "石梯坪", "lat": 23.488, "lon": 121.503, "icon": "🛡️", "color": "#4b5563"},
     {"id": "cikatopay", "name": "Cikatopay", "meaning": "大葉山欖", "algo": "濱海防風林 / 沿海資源", "origin": "大港口", "lat": 23.498, "lon": 121.501, "icon": "🌳", "color": "#16a34a"},
     {"id": "cilangasan", "name": "Cilangasan", "meaning": "聖山", "algo": "制高點 / 正統根源", "origin": "八里灣山頂", "lat": 23.545, "lon": 121.489, "icon": "⛰️", "color": "#9333ea"},
-    {"id": "foladan", "name": "Foladan", "meaning": "月亮", "algo": "縱谷平原 / 曆法對應", "origin": "太巴塱", "lat": 23.658, "lon": 121.416, "icon": "🌙", "color": "#4f46e5"},
-    {"id": "kakopa", "name": "Kakopa", "meaning": "牛車", "algo": "戰術運輸 / 後勤載重", "origin": "哈拉灣", "lat": 23.355, "lon": 121.365, "icon": "🐂", "color": "#ea580c"},
-    {"id": "monari", "name": "Monari'", "meaning": "茅草", "algo": "在地資材庫 / 建材控制", "origin": "長光部落舊社", "lat": 23.398, "lon": 121.488, "icon": "⛺", "color": "#b45309"}
+    # [FIXED] Foladan -> 豐濱鄉的靜埔 (Jingpu)
+    {"id": "foladan", "name": "Foladan", "meaning": "月亮", "algo": "縱谷平原 / 曆法對應", "origin": "豐濱鄉的靜埔", "lat": 23.460, "lon": 121.500, "icon": "🌙", "color": "#4f46e5"},
+    # [FIXED] Kakopa -> 綠島 (Green Island)
+    {"id": "kakopa", "name": "Kakopa", "meaning": "牛車", "algo": "戰術運輸 / 後勤載重", "origin": "綠島", "lat": 22.665, "lon": 121.495, "icon": "🐂", "color": "#ea580c"},
+    # [FIXED] Monari' -> 大港口 (Dagangkou)
+    {"id": "monari", "name": "Monari'", "meaning": "茅草", "algo": "在地資材庫 / 建材控制", "origin": "大港口", "lat": 23.498, "lon": 121.501, "icon": "⛺", "color": "#b45309"}
 ]
 
 # 尋根小語 (隨機顯示)
@@ -142,7 +145,7 @@ with st.sidebar:
     st.caption("Amis Navigator: 尋根之旅")
     st.divider()
     
-    # [修改區塊] 祖靈的指引
+    # 祖靈的指引
     st.markdown("### 🏔️ 祖靈的指引")
     
     # 隨機選取一句尋根小語
@@ -158,7 +161,7 @@ with st.sidebar:
     
     st.divider()
     
-    # 重置按鈕改名
+    # 重置按鈕
     if st.button("🔄 重新啟動旅程 (Reset)"):
         st.session_state.clan_data = DEFAULT_CLAN_DB
         st.rerun()
